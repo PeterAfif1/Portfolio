@@ -29,6 +29,7 @@ function Nav() {
       style={{
         backdropFilter: "blur(12px)",
         background: "rgba(10, 10, 10, 0.85)",
+        padding: "1.5rem 4rem",
       }}
     >
       <span
