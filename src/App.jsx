@@ -148,7 +148,7 @@ function Hero() {
           },
           {
             label: "Resume",
-            href: "/public/Peter_s_Resume.pdf",
+            href: "/Peter_s_Resume.pdf",
             target: "_blank",
             download: true,
           },
@@ -156,7 +156,8 @@ function Hero() {
           <a
             key={link.label}
             href={link.href}
-            target="_blank"
+            target={link.target || "_blank"}
+            download={link.download || false}
             rel="noreferrer"
             style={{
               color: "#888",
