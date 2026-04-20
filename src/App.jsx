@@ -181,6 +181,27 @@ function Hero() {
           </a>
         ))}
       </motion.div>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        className="text-center"
+        style={{
+          fontSize: "0.95rem",
+          color: "#666",
+          marginTop: "2.5rem",
+          maxWidth: "560px",
+          margin: "2.5rem auto 0",
+          lineHeight: 1.7,
+          letterSpacing: "0.02em",
+        }}
+      >
+        I'm a CS student at Cal State Fullerton graduating in July 2026,
+        building full-stack web apps and ML tools. Most of my projects live at
+        the intersection of code and music — I'm also a drummer and violinist
+        with 20K+ followers across TikTok, Instagram, and YouTube. Currently
+        looking for software engineering roles in web development and AI.
+      </motion.p>
     </motion.section>
   );
 }
@@ -289,7 +310,7 @@ function Work() {
   return (
     <section
       id="work"
-      style={{ padding: "8rem 2rem", maxWidth: "1100px", margin: "0 auto" }}
+      style={{ padding: "4rem 2rem", maxWidth: "1100px", margin: "0 auto" }}
     >
       <FadeUp>
         <p
