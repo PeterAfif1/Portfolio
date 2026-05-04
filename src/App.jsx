@@ -40,7 +40,7 @@ function Nav() {
           padding: "2rem 2rem",
         }}
       >
-        Peter Afif
+        Peter Afif Portfolio
       </span>
       <div
         className="flex gap-8"
@@ -106,7 +106,7 @@ function Hero() {
           }}
           className="text-center"
         >
-          Software
+          Peter
         </motion.h1>
       </div>
 
@@ -125,12 +125,13 @@ function Hero() {
             fontWeight: 400,
             fontStyle: "italic",
             lineHeight: 1.05,
-            letterSpacing: "-0.02em",
+            letterSpacing: "0.05em",
             color: "#666",
+            paddingBottom: "2px",
           }}
           className="text-center"
         >
-          Engineer
+          Afif
         </motion.h1>
       </div>
 
@@ -289,7 +290,7 @@ function Work() {
       description:
         "A full-stack music app built for drummers. Features a Web Audio API metronome with lookahead scheduling, tap tempo, and session tracking.",
       tags: ["React", "Node.js", "Web Audio API", "PostgreSQL"],
-      link: "https://github.com/PeterAfif1/groove-vault",
+      link: "https://groove-vault-f1b2.onrender.com/",
     },
     {
       title: "Real-Time Audio Practice Analyst",
