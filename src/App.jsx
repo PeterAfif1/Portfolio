@@ -288,22 +288,46 @@ function Work() {
     {
       title: "Groove Vault",
       description:
-        "A full-stack music app built for drummers. Features a Web Audio API metronome with lookahead scheduling, tap tempo, and session tracking.",
-      tags: ["React", "Node.js", "Web Audio API", "PostgreSQL"],
+        "Full-stack TypeScript practice tracker for drummers, deployed on Render. Features a RESTful API with window function CTEs for BPM trend tracking, a Web Audio API metronome with lookahead scheduling and tap tempo, and a CI/CD pipeline with 5 parallel GitHub Actions jobs including Vitest + Supertest with a mocked DB.",
+      tags: [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Web Audio API",
+        "PostgreSQL",
+        "GitHub Actions",
+      ],
       link: "https://groove-vault-f1b2.onrender.com/",
     },
     {
-      title: "Real-Time Audio Practice Analyst",
+      title: "Backbeat AI",
       description:
-        "ML pipeline using Librosa and a Random Forest classifier to analyze live microphone audio and classify performance quality in real time, with a full-stack React + Node.js interface.",
-      tags: ["React", "Node.js", "Python", "Librosa", "Scikit-learn"],
-      link: "https://github.com/PeterAfif1/Practice-Analyst",
+        "ML-powered drum practice analyzer. Records live audio, extracts 16 rhythm features (IOI stats, beat deviation, tempo delta), and classifies performance into correct, off-rhythm, rushed, or dragging using a GradientBoosting classifier. Full-stack React + Node.js + PostgreSQL with real-time WebSocket feedback.",
+      tags: [
+        "React",
+        "Node.js",
+        "Python",
+        "Librosa",
+        "Scikit-learn",
+        "PostgreSQL",
+        "WebSocket",
+        "Docker",
+      ],
+      link: "https://backbeatai.vercel.app/",
     },
     {
-      title: "Event Discovery App",
+      title: "EventConnect",
       description:
-        "Scalable RESTful API with JWT auth, OAuth, advanced filtering on PostgreSQL, and a CI/CD pipeline via GitHub Actions for automated testing and schema migrations.",
-      tags: ["React", "Node.js", "PostgreSQL", "JWT", "GitHub Actions"],
+        "Social event discovery app built as a team capstone. I owned the backend architecture, CI/CD pipeline, and testing — including a transactional RSVP system with PostgreSQL row-level locking, Google OAuth 2.0 via Passport.js + JWT, 3 GitHub Actions workflows with Docker service containers, and 44 unit/integration tests with Jest and Supertest.",
+      tags: [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Docker",
+        "Jest",
+        "JWT",
+        "GitHub Actions",
+      ],
       link: "https://github.com/deiaashin2/The_Social_Event_Discovery_App",
     },
   ];
