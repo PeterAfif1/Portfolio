@@ -150,7 +150,7 @@ function Hero() {
           },
           {
             label: "Resume",
-            href: "/Peter_s_Resume.pdf",
+            href: "/Peter_Afif_Resume_SWE.pdf",
             target: "_blank",
             download: true,
           },
@@ -197,11 +197,12 @@ function Hero() {
           letterSpacing: "0.02em",
         }}
       >
-        I'm a CS student at Cal State Fullerton graduating in July 2026,
-        building full-stack web apps and ML tools. Most of my projects live at
-        the intersection of code and music — I'm also a drummer and violinist
-        with 20K+ followers across TikTok, Instagram, and YouTube. Currently
-        looking for software engineering roles in web development and AI.
+        CS student at Cal State Fullerton (graduating July 2026) building
+        full-stack web apps and ML tools; 3 deployed projects spanning React,
+        TypeScript, Node.js, PostgreSQL, and GPT-4o. Outside of code, I'm a
+        drummer and violinist with 20K+ followers across TikTok, Instagram, and
+        YouTube. Currently looking for software engineering roles in web
+        development and AI.
       </motion.p>
     </motion.section>
   );
@@ -286,6 +287,21 @@ function ProjectCard({ title, description, tags, link, index }) {
 function Work() {
   const projects = [
     {
+      title: "Resume Shift",
+      description:
+        "AI-powered resume analyzer with a 5-phase stateful multi-turn conversation engine. Built a GPT-4o-mini classifier to detect phase completion, replacing brittle regex logic. Developed a custom eval framework measuring keyword hit rate — improved from 0.10 → 0.81 across 4 prompt iterations on 10 labeled test cases.",
+      tags: [
+        "React",
+        "Node.js",
+        "Express",
+        "GPT-4o",
+        "OpenAI API",
+        "Vite",
+        "JavaScript",
+      ],
+      link: "https://github.com/deiaashin2/The_Social_Event_Discovery_App",
+    },
+    {
       title: "Groove Vault",
       description:
         "Full-stack TypeScript practice tracker for drummers, deployed on Render. Features a RESTful API with window function CTEs for BPM trend tracking, a Web Audio API metronome with lookahead scheduling and tap tempo, and a CI/CD pipeline with 5 parallel GitHub Actions jobs including Vitest + Supertest with a mocked DB.",
@@ -296,6 +312,7 @@ function Work() {
         "Web Audio API",
         "PostgreSQL",
         "GitHub Actions",
+        "Docker",
       ],
       link: "https://groove-vault-f1b2.onrender.com/",
     },
@@ -314,21 +331,6 @@ function Work() {
         "Docker",
       ],
       link: "https://backbeatai.vercel.app/",
-    },
-    {
-      title: "EventConnect",
-      description:
-        "Social event discovery app built as a team capstone. I owned the backend architecture, CI/CD pipeline, and testing — including a transactional RSVP system with PostgreSQL row-level locking, Google OAuth 2.0 via Passport.js + JWT, 3 GitHub Actions workflows with Docker service containers, and 44 unit/integration tests with Jest and Supertest.",
-      tags: [
-        "React",
-        "Node.js",
-        "PostgreSQL",
-        "Docker",
-        "Jest",
-        "JWT",
-        "GitHub Actions",
-      ],
-      link: "https://github.com/deiaashin2/The_Social_Event_Discovery_App",
     },
   ];
 
