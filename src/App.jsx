@@ -287,9 +287,9 @@ function ProjectCard({ title, description, tags, link, index }) {
 function Work() {
   const projects = [
     {
-      title: "Resume Shift",
+      title: "ResumeShift",
       description:
-        "AI-powered resume analyzer with a 5-phase stateful multi-turn conversation engine. Built a GPT-4o-mini classifier to detect phase completion, replacing brittle regex logic. Developed a custom eval framework measuring keyword hit rate — improved from 0.10 → 0.81 across 4 prompt iterations on 10 labeled test cases.",
+        "AI-powered resume analyzer with a 5-phase stateful multi-turn conversation engine using GPT-4o. Built a GPT-4o-mini intent classifier to detect phase completion, replacing brittle regex. Designed a custom eval framework measuring keyword hit rate — improved from 0.10 → 0.81 across 4 prompt iterations on 10 labeled test cases.",
       tags: [
         "React",
         "Node.js",
@@ -299,38 +299,22 @@ function Work() {
         "Vite",
         "JavaScript",
       ],
-      link: "https://github.com/deiaashin2/The_Social_Event_Discovery_App",
+      link: "https://resume-shift.vercel.app",
     },
     {
       title: "Groove Vault",
       description:
-        "Full-stack TypeScript practice tracker for drummers, deployed on Render. Features a RESTful API with window function CTEs for BPM trend tracking, a Web Audio API metronome with lookahead scheduling and tap tempo, and a CI/CD pipeline with 5 parallel GitHub Actions jobs including Vitest + Supertest with a mocked DB.",
+        "Full-stack TypeScript practice tracker for drummers with a RAG-powered AI assistant. PDFs are chunked, embedded with OpenAI text-embedding-3-small, stored in pgvector, and retrieved via cosine similarity for grounded GPT-4o responses. Features a RESTful API with window function CTEs for BPM trend tracking, gap-and-island SQL for streak calculation, a Web Audio API metronome, and CI/CD with 5 parallel GitHub Actions jobs.",
       tags: [
         "React",
         "TypeScript",
         "Node.js",
-        "Web Audio API",
         "PostgreSQL",
+        "pgvector",
+        "OpenAI API",
         "GitHub Actions",
-        "Docker",
       ],
-      link: "https://groove-vault-f1b2.onrender.com/",
-    },
-    {
-      title: "Backbeat AI",
-      description:
-        "ML-powered drum practice analyzer. Records live audio, extracts 16 rhythm features (IOI stats, beat deviation, tempo delta), and classifies performance into correct, off-rhythm, rushed, or dragging using a GradientBoosting classifier. Full-stack React + Node.js + PostgreSQL with real-time WebSocket feedback.",
-      tags: [
-        "React",
-        "Node.js",
-        "Python",
-        "Librosa",
-        "Scikit-learn",
-        "PostgreSQL",
-        "WebSocket",
-        "Docker",
-      ],
-      link: "https://backbeatai.vercel.app/",
+      link: "https://groove-vault-f1b2.onrender.com",
     },
   ];
 
