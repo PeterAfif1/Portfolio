@@ -150,7 +150,7 @@ function Hero() {
           },
           {
             label: "Resume",
-            href: "/Peter_Afif_Resume_SWE.pdf",
+            href: "/Peter_Afif_Resume.pdf",
             target: "_blank",
             download: true,
           },
@@ -198,11 +198,11 @@ function Hero() {
         }}
       >
         CS student at Cal State Fullerton (graduating July 2026) building
-        full-stack web apps and ML tools; 3 deployed projects spanning React,
-        TypeScript, Node.js, PostgreSQL, and GPT-4o. Outside of code, I'm a
-        drummer and violinist with 20K+ followers across TikTok, Instagram, and
-        YouTube. Currently looking for software engineering roles in web
-        development and AI.
+full-stack web apps and ML tools; 3 deployed projects spanning Python,
+React, Node.js, PostgreSQL, and GPT-4o. Outside of code, I'm a
+drummer and violinist with 20K+ followers across TikTok, Instagram, and
+YouTube. Currently looking for software engineering roles in web
+development and AI.
       </motion.p>
     </motion.section>
   );
@@ -289,7 +289,7 @@ function Work() {
     {
       title: "ResumeShift",
       description:
-        "AI-powered resume analyzer with a 5-phase stateful multi-turn conversation engine using GPT-4o. Built a GPT-4o-mini intent classifier to detect phase completion, replacing brittle regex. Designed a custom eval framework measuring keyword hit rate — improved from 0.10 → 0.81 across 4 prompt iterations on 10 labeled test cases.",
+          "AI-powered resume analyzer with a 5-phase stateful multi-turn conversation engine using GPT-4o. Built a GPT-4o-mini intent classifier to detect phase completion, replacing brittle regex. Supports optional job description grounding to extract role-specific keywords absent from the resume. Designed a custom eval framework measuring keyword hit rate — improved from 0.10 → 0.81 across 4 prompt iterations on 10 labeled test cases.",
       tags: [
         "React",
         "Node.js",
@@ -316,6 +316,22 @@ function Work() {
       ],
       link: "https://groove-vault-f1b2.onrender.com",
     },
+    {
+  title: "Backbeat AI",
+  description:
+    "ML-powered drum practice analyzer. A Python pipeline uses Librosa to extract 16 rhythm features and a Scikit-learn GradientBoostingClassifier to classify live drumming into 4 timing states. Trained on 57k augmented samples with class-weighted training, improving minority class recall from 0.16 to 0.45. Deployed via Docker with server-side FFmpeg audio conversion and WebSocket real-time prediction streaming.",
+  tags: [
+    "Python",
+    "Scikit-learn",
+    "Librosa",
+    "React",
+    "Node.js",
+    "PostgreSQL",
+    "Docker",
+    "WebSocket",
+  ],
+  link: "https://backbeatai.vercel.app/",
+},
   ];
 
   return (
