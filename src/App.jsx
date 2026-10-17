@@ -46,7 +46,7 @@ function Nav() {
         className="flex gap-8"
         style={{ fontSize: "0.85rem", letterSpacing: "0.08em", color: "#888" }}
       >
-        {["Work", "Music", "Contact"].map((item) => (
+        {["Work", "Experience", "Music", "Contact"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -89,7 +89,7 @@ function Hero() {
         }}
         className="text-center"
       >
-        CS MAJOR · FULLERTON, CA
+        SOFTWARE ENGINEER · IRVINE, CA
       </motion.p>
 
       <div style={{ overflow: "hidden" }}>
@@ -197,12 +197,12 @@ function Hero() {
           letterSpacing: "0.02em",
         }}
       >
-        CS student at Cal State Fullerton (graduating July 2026) building
-full-stack web apps and ML tools; 3 deployed projects spanning Python,
-React, Node.js, PostgreSQL, and GPT-4o. Outside of code, I'm a
-drummer and violinist with 20K+ followers across TikTok, Instagram, and
-YouTube. Currently looking for software engineering roles in web
-development and AI.
+        Computer Science graduate from Cal State Fullerton building full-stack
+        and AI-powered apps across web, iOS, and backend, from LLM agents with
+        evals and CI gates to an iOS app on the App Store. Outside of code, I'm
+        a drummer and violinist with 20K+ followers across TikTok, Instagram,
+        and YouTube, and I've taught drums for seven years. Currently looking
+        for software engineering roles in full-stack and AI.
       </motion.p>
     </motion.section>
   );
@@ -287,51 +287,34 @@ function ProjectCard({ title, description, tags, link, index }) {
 function Work() {
   const projects = [
     {
-      title: "ResumeShift",
+      title: "Foreman",
       description:
-          "AI-powered resume analyzer with a 5-phase stateful multi-turn conversation engine using GPT-4o. Built a GPT-4o-mini intent classifier to detect phase completion, replacing brittle regex. Supports optional job description grounding to extract role-specific keywords absent from the resume. Designed a custom eval framework measuring keyword hit rate — improved from 0.10 → 0.81 across 4 prompt iterations on 10 labeled test cases.",
+        "AI intake system for contractors that turns messy emails, texts, and call notes into structured leads, with a tool-calling chat agent, reply drafts, and RAG estimates from past quotes. Cut extraction hallucinations from 5.9% to 1.4% (97.3% field accuracy) by moving date math and name checks from the prompt into code, with eval suites and a CI gate that fails the build on regressions. Stress-tested the agent against 26 simulated customers and 8 adversarial attacks: 0 lost leads, 24/24 attacks blocked.",
       tags: [
+        "Python",
+        "FastAPI",
         "React",
-        "Node.js",
-        "Express",
-        "GPT-4o",
         "OpenAI API",
-        "Vite",
-        "JavaScript",
-      ],
-      link: "https://resume-shift.vercel.app",
-    },
-    {
-      title: "Groove Vault",
-      description:
-        "Full-stack TypeScript practice tracker for drummers with a RAG-powered AI assistant. PDFs are chunked, embedded with OpenAI text-embedding-3-small, stored in pgvector, and retrieved via cosine similarity for grounded GPT-4o responses. Features a RESTful API with window function CTEs for BPM trend tracking, gap-and-island SQL for streak calculation, a Web Audio API metronome, and CI/CD with 5 parallel GitHub Actions jobs.",
-      tags: [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "PostgreSQL",
-        "pgvector",
-        "OpenAI API",
+        "RAG",
+        "Docker",
         "GitHub Actions",
       ],
-      link: "https://groove-vault-f1b2.onrender.com",
+      link: "https://github.com/PeterAfif1/foreman",
     },
     {
-  title: "Backbeat AI",
-  description:
-    "ML-powered drum practice analyzer. A Python pipeline uses Librosa to extract 16 rhythm features and a Scikit-learn GradientBoostingClassifier to classify live drumming into 4 timing states. Trained on 57k augmented samples with class-weighted training, improving minority class recall from 0.16 to 0.45. Deployed via Docker with server-side FFmpeg audio conversion and WebSocket real-time prediction streaming.",
-  tags: [
-    "Python",
-    "Scikit-learn",
-    "Librosa",
-    "React",
-    "Node.js",
-    "PostgreSQL",
-    "Docker",
-    "WebSocket",
-  ],
-  link: "https://backbeatai.vercel.app/",
-},
+      title: "Backbeat",
+      description:
+        "iOS app that helps drummers create, practice, and track grooves and rudiments in one place, shipped to the App Store after TestFlight beta testing. An AI groove generator built on Gemini 2.5 Flash turns prompts into playable, notated drum patterns, with the API key kept server-side and usage capped per user to control cost. Features a 16-step sequencer with AVAudioEngine drum synthesis, practice analytics (BPM tracking, streaks, 28-day heatmap), JWT auth, and Google Sign-In.",
+      tags: ["SwiftUI", "Node.js", "PostgreSQL", "Gemini API", "AVAudioEngine"],
+      link: "https://apps.apple.com/app/id6792944827",
+    },
+    {
+      title: "JobAgent",
+      description:
+        "AI agent that scores resume-to-job fit from 0–100, finds skill gaps, and rewrites weak bullets. A five-node LangGraph workflow rewrites and re-scores until it hits a target fit score or iteration cap, using GPT-4o for rewrites and GPT-4o-mini for repeated scoring to control API cost. Streams workflow steps over Server-Sent Events with in-browser PDF parsing and per-pass score updates; deployed on Render.",
+      tags: ["Python", "LangGraph", "FastAPI", "React", "OpenAI API", "SSE"],
+      link: "https://jobagent-x8qe.onrender.com",
+    },
   ];
 
   return (
@@ -379,6 +362,135 @@ function Work() {
       >
         {projects.map((p, i) => (
           <ProjectCard key={p.title} {...p} index={i} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ── Experience Section ─────────────────────────────────────────────────────
+function Experience() {
+  const roles = [
+    {
+      title: "Technical Consultant Intern",
+      company: "TECHVITIS",
+      location: "Beirut, Lebanon",
+      dates: "Oct 2026 – Present",
+      points: [
+        "Completing a structured consultant training track covering IT infrastructure, cloud, and containerization (Docker), preparing for client-facing technical work.",
+        "Deployed a highly available Dockerized web app on AWS across two Availability Zones behind an Application Load Balancer, verified by a live failover test; built an NGINX reverse proxy with SSL over private subnets.",
+      ],
+    },
+    {
+      title: "Music Instructor",
+      company: "McCormick Music, Kidz Rock, Drum Path",
+      location: "Orange County, CA",
+      dates: "2019 – Present",
+      points: [
+        "Taught drums to 50+ students over seven years, adapting lessons to different ages, goals, and skill levels.",
+        "Explained complex rhythms in clear, practical terms, helping students build confidence and make steady progress.",
+      ],
+    },
+  ];
+
+  return (
+    <section
+      id="experience"
+      style={{ padding: "8rem 2rem 0", maxWidth: "1100px", margin: "0 auto" }}
+    >
+      <FadeUp>
+        <p
+          style={{
+            fontSize: "0.75rem",
+            letterSpacing: "0.2em",
+            color: "#444",
+            marginBottom: "1rem",
+            textAlign: "center",
+          }}
+        >
+          WHERE I'VE WORKED
+        </p>
+        <h2
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            fontWeight: 400,
+            marginBottom: "4rem",
+            textAlign: "center",
+          }}
+        >
+          Experience
+        </h2>
+      </FadeUp>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {roles.map((r, i) => (
+          <FadeUp key={r.title} delay={i * 0.1}>
+            <div
+              style={{
+                border: "1px solid #1e1e1e",
+                borderRadius: "12px",
+                padding: "2rem",
+                background: "#0f0f0f",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  flexWrap: "wrap",
+                  gap: "0.5rem 1rem",
+                  marginBottom: "0.4rem",
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: "1.4rem",
+                    fontWeight: 400,
+                  }}
+                >
+                  {r.title}
+                </h3>
+                <span
+                  style={{
+                    fontSize: "0.8rem",
+                    letterSpacing: "0.08em",
+                    color: "#555",
+                  }}
+                >
+                  {r.dates}
+                </span>
+              </div>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  letterSpacing: "0.05em",
+                  color: "#888",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                {r.company} · {r.location}
+              </p>
+              <ul
+                style={{
+                  color: "#666",
+                  fontSize: "0.9rem",
+                  lineHeight: 1.7,
+                  paddingLeft: "1.1rem",
+                  listStyle: "disc",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.5rem",
+                }}
+              >
+                {r.points.map((pt) => (
+                  <li key={pt}>{pt}</li>
+                ))}
+              </ul>
+            </div>
+          </FadeUp>
         ))}
       </div>
     </section>
@@ -648,6 +760,7 @@ export default function App() {
       <Nav />
       <Hero />
       <Work />
+      <Experience />
       <Music />
       <Contact />
       <Footer />
