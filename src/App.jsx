@@ -36,7 +36,7 @@ function Nav() {
       }}
     >
       <span
-        className="whitespace-nowrap md:p-8"
+        className="whitespace-nowrap md:px-8"
         style={{
           fontFamily: "'Playfair Display', serif",
           fontSize: "1.1rem",
@@ -54,6 +54,8 @@ function Nav() {
             key={item}
             href={`#${item.toLowerCase()}`}
             style={{
+              display: "inline-block",
+              padding: "12px 0",
               textDecoration: "none",
               color: "inherit",
               transition: "color 0.2s",
@@ -142,8 +144,8 @@ function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="flex gap-10 bottom-0 justify-center"
-        style={{ fontSize: "0.85rem", marginTop: "3rem" }}
+        className="flex flex-wrap gap-x-6 gap-y-1 md:gap-x-8 justify-center"
+        style={{ fontSize: "0.85rem", marginTop: "calc(3rem - 10px)" }}
       >
         {[
           { label: "GitHub", href: "https://github.com/PeterAfif1" },
@@ -165,20 +167,23 @@ function Hero() {
             download={link.download || false}
             rel="noreferrer"
             style={{
+              display: "inline-block",
+              padding: "10px 4px",
+              whiteSpace: "nowrap",
               color: "#888",
-              textDecoration: "none",
-              borderBottom: "1px solid #333",
-              paddingBottom: "2px",
+              textDecoration: "underline",
+              textDecorationColor: "#333",
+              textUnderlineOffset: "6px",
               letterSpacing: "0.08em",
-              transition: "color 0.2s, border-color 0.2s",
+              transition: "color 0.2s, text-decoration-color 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.target.style.color = "#f0ede6";
-              e.target.style.borderColor = "#f0ede6";
+              e.currentTarget.style.color = "#f0ede6";
+              e.currentTarget.style.textDecorationColor = "#f0ede6";
             }}
             onMouseLeave={(e) => {
-              e.target.style.color = "#888";
-              e.target.style.borderColor = "#333";
+              e.currentTarget.style.color = "#888";
+              e.currentTarget.style.textDecorationColor = "#333";
             }}
           >
             {link.label} ↗
@@ -227,7 +232,7 @@ function ProjectCard({ title, description, tags, link, index }) {
           color: "inherit",
           border: "1px solid #1e1e1e",
           borderRadius: "12px",
-          padding: "2rem",
+          padding: "clamp(1.25rem, 5vw, 2rem)",
           background: "#0f0f0f",
           cursor: "pointer",
           transition: "border-color 0.3s",
@@ -321,7 +326,7 @@ function Backbeat() {
   return (
     <section
       id="backbeat"
-      style={{ padding: "6rem 2rem", maxWidth: "1100px", margin: "0 auto" }}
+      style={{ padding: "clamp(4rem, 10vw, 6rem) clamp(1rem, 4vw, 2rem)", maxWidth: "1100px", margin: "0 auto" }}
     >
       <FadeUp>
         <p
@@ -343,7 +348,7 @@ function Backbeat() {
           gap: "3rem",
           border: "1px solid #1e1e1e",
           borderRadius: "16px",
-          padding: "clamp(1.5rem, 4vw, 3rem)",
+          padding: "clamp(1.25rem, 4vw, 3rem)",
           background:
             "radial-gradient(ellipse at 80% 100%, rgba(229, 56, 59, 0.08), transparent 60%), #0f0f0f",
         }}
@@ -472,8 +477,12 @@ function Backbeat() {
                   textDecoration: "none",
                   fontSize: "0.85rem",
                   letterSpacing: "0.08em",
-                  padding: "0.7rem 1.4rem",
+                  padding: "0.8rem 1.4rem",
                   borderRadius: "999px",
+                  flex: "1 1 0",
+                  maxWidth: "200px",
+                  textAlign: "center",
+                  whiteSpace: "nowrap",
                   border: l.primary ? "1px solid #e5383b" : "1px solid #333",
                   background: l.primary ? "#e5383b" : "transparent",
                   color: "#f0ede6",
@@ -552,7 +561,7 @@ function Work() {
   return (
     <section
       id="work"
-      style={{ padding: "4rem 2rem", maxWidth: "1100px", margin: "0 auto" }}
+      style={{ padding: "4rem clamp(1rem, 4vw, 2rem)", maxWidth: "1100px", margin: "0 auto" }}
     >
       <FadeUp>
         <p
@@ -628,7 +637,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      style={{ padding: "8rem 2rem 0", maxWidth: "1100px", margin: "0 auto" }}
+      style={{ padding: "clamp(4rem, 12vw, 8rem) clamp(1rem, 4vw, 2rem) 0", maxWidth: "1100px", margin: "0 auto" }}
     >
       <FadeUp>
         <p
@@ -662,7 +671,7 @@ function Experience() {
               style={{
                 border: "1px solid #1e1e1e",
                 borderRadius: "12px",
-                padding: "2rem",
+                padding: "clamp(1.25rem, 5vw, 2rem)",
                 background: "#0f0f0f",
               }}
             >
@@ -747,7 +756,7 @@ function Music() {
     <section
       id="music"
       style={{
-        padding: "8rem 2rem",
+        padding: "clamp(4rem, 12vw, 8rem) clamp(1rem, 4vw, 2rem)",
         maxWidth: "1100px",
         margin: "0 auto",
         justifyContent: "center",
@@ -806,8 +815,8 @@ function Music() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             style={{
-              width: "325px",
-              height: "560px",
+              width: "min(325px, 100%)",
+              aspectRatio: "325 / 560",
               border: "none",
               borderRadius: "12px",
             }}
@@ -819,8 +828,8 @@ function Music() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             style={{
-              width: "325px",
-              height: "560px",
+              width: "min(325px, 100%)",
+              aspectRatio: "325 / 560",
               border: "none",
               borderRadius: "12px",
             }}
@@ -910,7 +919,7 @@ function Contact() {
     <section
       id="contact"
       style={{
-        padding: "8rem 2rem 6rem",
+        padding: "clamp(4rem, 12vw, 8rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 10vw, 6rem)",
         maxWidth: "1100px",
         margin: "0 auto",
         textAlign: "center",
@@ -949,15 +958,20 @@ function Contact() {
           style={{
             display: "inline-block",
             fontSize: "1rem",
+            padding: "10px 4px",
             color: "#f0ede6",
-            textDecoration: "none",
-            borderBottom: "1px solid #333",
-            paddingBottom: "4px",
+            textDecoration: "underline",
+            textDecorationColor: "#333",
+            textUnderlineOffset: "8px",
             letterSpacing: "0.03em",
-            transition: "border-color 0.2s",
+            transition: "text-decoration-color 0.2s",
           }}
-          onMouseEnter={(e) => (e.target.style.borderColor = "#f0ede6")}
-          onMouseLeave={(e) => (e.target.style.borderColor = "#333")}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.textDecorationColor = "#f0ede6")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.textDecorationColor = "#333")
+          }
         >
           peterafif19@gmail.com {"↗"}
         </a>
