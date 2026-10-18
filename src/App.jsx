@@ -151,7 +151,7 @@ function Hero() {
           { label: "GitHub", href: "https://github.com/PeterAfif1" },
           {
             label: "LinkedIn",
-            href: "https://www.linkedin.com/in/peter-afif-4ba131264/",
+            href: "https://www.linkedin.com/in/peterafif/",
           },
           {
             label: "Resume",
